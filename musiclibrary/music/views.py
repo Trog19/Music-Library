@@ -41,4 +41,9 @@ def song_detail(request, pk):
         song.delete()
         return Response(status=status.HTTP_404_NOT_FOUND)
     elif request.method == 'PATCH':
-        serializer = SongSerializer
+        song = get_object_or_404(Song, pk=pk)
+        song.likes +=1; 
+        serializer = SongSerializer(song)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+    return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
