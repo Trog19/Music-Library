@@ -10,3 +10,6 @@ class Song(models.Model):
     genre = models.CharField(max_length=50)
     release_date = models.DateField()
 
+class Like(models.Model)
+    song = Song
+    users = 
