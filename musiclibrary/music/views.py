@@ -38,31 +38,3 @@ def song_detail(request, pk):
     elif request.method == 'DELETE':
         song.delete()
         return Response(status=status.HTTP_404_NOT_FOUND)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
